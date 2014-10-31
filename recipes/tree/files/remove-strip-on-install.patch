@@ -1,0 +1,13 @@
+diff --git a/Makefile b/Makefile
+index 7501eee..9fb6981 100644
+--- a/Makefile
++++ b/Makefile
+@@ -97,7 +97,7 @@ install: tree
+ 	install -d $(BINDIR)
+ 	install -d $(MANDIR)
+ 	if [ -e $(TREE_DEST) ]; then \
+-		install -s $(TREE_DEST) $(BINDIR)/$(TREE_DEST); \
++		install $(TREE_DEST) $(BINDIR)/$(TREE_DEST); \
+ 	fi
+ 	install doc/$(MAN) $(MANDIR)/$(MAN)
+ 
