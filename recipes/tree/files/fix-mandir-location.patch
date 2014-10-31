@@ -1,0 +1,13 @@
+diff --git a/Makefile b/Makefile
+index 9fb6981..9f8f74e 100644
+--- a/Makefile
++++ b/Makefile
+@@ -24,7 +24,7 @@ VERSION=1.6.0
+ TREE_DEST=tree
+ BINDIR=${prefix}/bin
+ MAN=tree.1
+-MANDIR=${prefix}/man/man1
++MANDIR=${prefix}/share/man/man1
+ OBJS=tree.o unix.o html.o xml.o hash.o color.o
+ 
+ # Uncomment options below for your particular OS:

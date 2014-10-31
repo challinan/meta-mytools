@@ -11,14 +11,16 @@ SRC_URI[md5sum] = "04e967a3f4108d50cde3b4b0e89e970a"
 SRC_URI[sha256sum] = "4dc470a74880338b01da41701d8db90d0fb178877e526d385931a007d68d7591"
 
 SRC_URI = "https://launchpad.net/ubuntu/+archive/primary/+files/tree_1.6.0.orig.tar.gz \
-           file://remove-strip-on-install.patch \
+           file://remove-strip-on-install.patch \ 
+           file://fix-mandir-location.patch \
 "
 
 do_configure() {
 }
 
-EXTRA_OEMAKE = "prefix=${D} CC='${CC}' CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' LD='${LD}'"
+EXTRA_OEMAKE = "prefix=${D}/usr CC='${CC}' CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' LD='${LD}'"
 
 do_install() {
 	oe_runmake 'DESTDIR=${D}' install
 }
+
