@@ -1,5 +1,3 @@
-PRINC := "${@int(PRINC) + 1}"
-
 ROOTFS_POSTPROCESS_COMMAND += " copy_conf_to_image "
 
 copy_conf_to_image() {

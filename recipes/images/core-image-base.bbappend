@@ -1,5 +1,3 @@
-PRINC := "${@int(PRINC) + 1}"
-
 IMAGE_INSTALL_append += " tree file"
 
 ROOTFS_POSTPROCESS_COMMAND += " copy_conf_to_image "
