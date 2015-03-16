@@ -1,0 +1,28 @@
+From bd152020a820da02f8cc40270e4a1a36cc51e243 Mon Sep 17 00:00:00 2001
+From: Wade Farnsworth <wade_farnsworth@mentor.com>
+Date: Thu, 19 Feb 2015 10:13:14 -0700
+Subject: [PATCH] crypto/caam: Increase RNG entropy delay
+
+Increase RNG entropy delay to 6400 system clocks to prevent kernel panic
+on boot when not enough entropy has been generated.
+
+Signed-off-by: Wade Farnsworth <wade_farnsworth@mentor.com>
+---
+ drivers/crypto/caam/intern.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/crypto/caam/intern.h b/drivers/crypto/caam/intern.h
+index d544e69..384f6eb 100644
+--- a/drivers/crypto/caam/intern.h
++++ b/drivers/crypto/caam/intern.h
+@@ -13,7 +13,7 @@
+ #define JOBR_ASSIGNED 1
+ 
+ /* Default clock/sample settings for an RNG4 entropy source */
+-#define RNG4_ENT_CLOCKS_SAMPLE 1600
++#define RNG4_ENT_CLOCKS_SAMPLE 6400
+ 
+ /* Currently comes from Kconfig param as a ^2 (driver-required) */
+ #define JOBR_DEPTH (1 << CONFIG_CRYPTO_DEV_FSL_CAAM_RINGSIZE)
+-- 
+1.9.0
