@@ -1,0 +1,13 @@
+diff --git a/init/main.c b/init/main.c
+index 1812218..cdb06b5 100644
+--- a/init/main.c
++++ b/init/main.c
+@@ -841,6 +841,8 @@ static int __ref kernel_init(void *unused)
+ 	 * The Bourne shell can be used instead of init if we are
+ 	 * trying to recover a really broken machine.
+ 	 */
++	pr_notice("%s", linux_banner);
++	pr_notice("Kernel command line: %s\n", boot_command_line);
+ 	if (execute_command) {
+ 		if (!run_init_process(execute_command))
+ 			return 0;
